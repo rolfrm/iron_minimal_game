@@ -6,9 +6,9 @@ CC = gcc
 TARGET = run
 LIB_OBJECTS =$(LIB_SOURCES:.c=.o)
 LDFLAGS= -L. $(OPT)
-LIBS= -lpthread -ldl libiron.a -lm -lglfw -lX11 -lGL
+LIBS= -lm libiron.a
 ALL= $(TARGET)
-CFLAGS = -Isrc/ -I. -Iinclude/ -std=gnu11 -c $(OPT) -Werror=implicit-function-declaration -Wformat=0 -D_GNU_SOURCE -fdiagnostics-color  -Wwrite-strings -msse4.2 -Werror=maybe-uninitialized -DUSE_VALGRIND -DDEBUG -Wall
+CFLAGS = -Isrc/ -I. -Iinclude/ -std=gnu11 -c $(OPT) -Werror=implicit-function-declaration -Wformat=0 -D_GNU_SOURCE -fdiagnostics-color  -Wwrite-strings -msse4.2 -Werror=maybe-uninitialized  -DDEBUG -Wall #-DUSE_VALGRIND
 
 all: libiron.a 
 all: $(TARGET)
